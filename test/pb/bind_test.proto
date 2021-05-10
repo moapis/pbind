@@ -1,0 +1,24 @@
+// Definitions for testing.
+// Generate with:
+// protoc --go_out=. --go_opt=paths=source_relative bind_test.proto
+
+syntax = "proto3";
+
+package pb;
+option go_package = "github.com/moapis/pbind/test/pb";
+
+message Msg {
+    bool toggle = 1;
+    int32 number = 2;
+    sint32 snumber = 3;
+    uint32 unumber = 4;
+    int64 large = 5;
+    sfixed64 slarge = 6;
+    fixed64 ularge = 7;
+    float sfloat = 8;
+    double lfloat = 9;
+    string text = 10;
+    bytes bin = 11;
+
+    map<string, string> mp= 12; // Scanning not supported
+}
